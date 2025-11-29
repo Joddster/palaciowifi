@@ -3,11 +3,11 @@
     brandName: "Palacio Guest Services",
     headline: "Stay connected during your visit",
     subHeadline: "Reach us instantly on WhatsApp or join the complimentary Wi‑Fi.",
-    whatsappNumber: "+626122034558",
+    whatsappNumber: "+526121539351",
     whatsappMessage: "Hola Palacio, necesito ayuda con mi visita.",
     wifi: {
-      ssid: "YOUR_WIFI_SSID",
-      password: "YOUR_WIFI_PASSWORD",
+      ssid: "palacioblanco",
+      password: "palaciowhite",
       security: "WPA2"
     },
     landingUrl: "https://palacioqr.vercel.app",
