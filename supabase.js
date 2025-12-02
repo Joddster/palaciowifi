@@ -2,8 +2,8 @@
 // This file reads environment variables from Vercel
 
 // For Vercel deployment, these will be automatically available from environment variables
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || '';
-const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+const SUPABASE_URL = (import.meta.env && import.meta.env.VITE_SUPABASE_URL) || '';
+const SUPABASE_ANON_KEY = (import.meta.env && import.meta.env.VITE_SUPABASE_ANON_KEY) || '';
 
 // Initialize Supabase client (if credentials are available)
 let supabaseClient = null;
