@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PalacioBlanco Guest Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body>
+    <noscript>
+      <div class="noscript">
+        Please enable JavaScript to use the Palacio guest portal.
+      </div>
+    </noscript>
+
+    <div class="container">
+      <!-- Hero Header -->
+      <header class="header">
+        <div class="header__monogram">PB</div>
+        <h1 id="headerTitle" class="header__title">PalacioBlanco</h1>
+        <p id="headerSubtitle" class="header__subtitle">Baja California Sur</p>
+        <div class="header__divider"></div>
+        <p id="headerDescription" class="header__description">
+          Concierge Services • Korina: <a href="tel:+526122034558" class="header__phone">+52 612 203 4558</a>
+        </p>
+        <div class="header__social">
+          <a href="https://instagram.com/Lv.palacioblanco" target="_blank" class="header__social-link" aria-label="Instagram">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <a href="https://wa.me/526122034558" target="_blank" class="header__social-link" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </header>
+
+      <!-- Intro Card -->
+      <div class="intro-card">
+        <div class="intro-card__icon">
+          <i class="fas fa-concierge-bell"></i>
+        </div>
+        <h2 class="intro-card__title">Personalized Luxury Services</h2>
+        <p class="intro-card__text">
+          Curated experiences for discerning travelers. From private chefs to exclusive excursions, every detail attended to.
+        </p>
+      </div>
+
+      <!-- WiFi Prominent CTA -->
+      <div class="wifi-cta">
+        <button id="wifiButton" class="wifi-cta__btn">
+          <div class="wifi-cta__icon">
+            <i class="fas fa-wifi"></i>
+          </div>
+          <div class="wifi-cta__content">
+            <h3 class="wifi-cta__title">Complimentary Wi-Fi</h3>
+            <p class="wifi-cta__subtitle">Tap to connect instantly • High-speed network</p>
+          </div>
+          <div class="wifi-cta__arrow">
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </button>
+      </div>
+
+      <!-- Services Divider -->
+      <div class="services-divider">
+        <span class="services-divider__line"></span>
+        <span class="services-divider__text">Featured Services</span>
+        <span class="services-divider__line"></span>
+      </div>
+
+      <!-- Service Cards Grid -->
+      <div class="services-grid" id="servicesGrid">
+        <button class="service-card service-card--button" data-service="chef" data-modal="chefServiceModal">
+          <img src="https://d1dugnwx5ew6jg.cloudfront.net/rs:fill:400:400/czM6Ly9jOGtlLXByb2QvNGVjZmI5OGItMmE2Ni00MzdkLTljN2UtNjBhYmMyNTI2YjI5XzE3MTE0NzYyNTE4MzEuanBn.jpg" alt="Chef Service" class="service-card__image" />
+          <div class="service-card__label">Chef Service</div>
+        </button>
+
+        <button class="service-card service-card--button" data-service="massages" data-modal="massagesModal">
+          <img src="https://d1dugnwx5ew6jg.cloudfront.net/rs:fill:400:400/czM6Ly9jOGtlLXByb2QvNGVjZmI5OGItMmE2Ni00MzdkLTljN2UtNjBhYmMyNTI2YjI5XzE3MTE0NzYyNjU3NTcuanBn.jpg" alt="Massages" class="service-card__image" />
+          <div class="service-card__label">Massages</div>
+        </button>
+
+        <button class="service-card service-card--button" data-service="scuba" data-modal="scubaModal">
+          <img src="https://d1dugnwx5ew6jg.cloudfront.net/rs:fill:400:400/czM6Ly9jOGtlLXByb2QvNGVjZmI5OGItMmE2Ni00MzdkLTljN2UtNjBhYmMyNTI2YjI5XzE3MTE0NzczMTM4OTMud2VicA.webp" alt="Scuba Diving" class="service-card__image" />
+          <div class="service-card__label">Scuba Diving</div>
+        </button>
+
+        <button class="service-card service-card--button" data-service="kiteboarding" data-modal="kiteboardingModal">
+          <img src="https://d1dugnwx5ew6jg.cloudfront.net/rs:fill:400:400/czM6Ly9jOGtlLXByb2QvNGVjZmI5OGItMmE2Ni00MzdkLTljN2UtNjBhYmMyNTI2YjI5XzE3MTE0NzcxNjkzMzguanBn.jpg" alt="Kiteboarding" class="service-card__image" />
+          <div class="service-card__label">Kiteboarding</div>
+        </button>
+
+        <button class="service-card service-card--button" data-service="fishing" data-modal="fishingModal">
+          <img src="https://d1dugnwx5ew6jg.cloudfront.net/rs:fill:400:400/czM6Ly9jOGtlLXByb2QvNGVjZmI5OGItMmE2Ni00MzdkLTljN2UtNjBhYmMyNTI2YjI5XzE3MTE0NzcxNzI3MTcuanBn.jpg" alt="Fishing" class="service-card__image" />
+          <div class="service-card__label">Fishing</div>
+        </button>
+
+        <button class="service-card service-card--button" data-service="freediving" data-modal="freedivingModal">
+          <img src="https://d1dugnwx5ew6jg.cloudfront.net/rs:fill:400:400/czM6Ly9jOGtlLXByb2QvNGVjZmI5OGItMmE2Ni00MzdkLTljN2UtNjBhYmMyNTI2YjI5XzE3MTE0NzcyOTkyNzkuanBn.jpg" alt="Freediving" class="service-card__image" />
+          <div class="service-card__label">Freediving</div>
+        </button>
+
+        <button class="service-card service-card--button" data-service="atv" data-modal="atvModal">
+          <img src="https://d1dugnwx5ew6jg.cloudfront.net/rs:fill:400:400/czM6Ly9jOGtlLXByb2QvNGVjZmI5OGItMmE2Ni00MzdkLTljN2UtNjBhYmMyNTI2YjI5XzE3MTE0NzYyNDM1MDkuanBn.jpg" alt="ATV Rental" class="service-card__image" />
+          <div class="service-card__label">ATV Rental</div>
+        </button>
+
+        <button class="service-card service-card--button" data-service="facial" data-modal="facialModal">
+          <img src="https://d1dugnwx5ew6jg.cloudfront.net/rs:fill:400:400/czM6Ly9jOGtlLXByb2QvNGVjZmI5OGItMmE2Ni00MzdkLTljN2UtNjBhYmMyNTI2YjI5XzE3MTE0NzYzNDk0NjMud2VicA.webp" alt="Facial Treatment" class="service-card__image" />
+          <div class="service-card__label">Facial Treatment</div>
+        </button>
+
+        <button class="service-card service-card--button" data-service="whales" data-modal="whalesModal">
+          <img src="https://d1dugnwx5ew6jg.cloudfront.net/rs:fill:400:400/czM6Ly9jOGtlLXByb2QvNGVjZmI5OGItMmE2Ni00MzdkLTljN2UtNjBhYmMyNTI2YjI5XzE3MTE0NzczODM1MTAuanBn.jpg" alt="Gray Whales | Whale Sharks" class="service-card__image" />
+          <div class="service-card__label">Gray Whales | Whale Sharks</div>
+        </button>
+      </div>
+
+      <!-- Newsletter Signup -->
+      <div class="newsletter">
+        <div class="newsletter__icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h3 class="newsletter__title">Exclusive Offers</h3>
+        <p class="newsletter__subtitle">
+          Subscribe for holiday specials, last-minute deals, and VIP member benefits
+        </p>
+        <form id="newsletterForm" class="newsletter__form">
+          <div class="newsletter__row">
+            <input 
+              type="text" 
+              id="firstName" 
+              name="firstName" 
+              placeholder="First Name" 
+              required 
+              class="newsletter__input"
+            />
+            <input 
+              type="text" 
+              id="lastName" 
+              name="lastName" 
+              placeholder="Last Name" 
+              required 
+              class="newsletter__input"
+            />
+          </div>
+          <input 
+            type="tel" 
+            id="phone" 
+            name="phone" 
+            placeholder="Phone Number" 
+            required 
+            class="newsletter__input newsletter__input--full"
+          />
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="Email Address" 
+            required 
+            class="newsletter__input newsletter__input--full"
+          />
+          <button type="submit" class="newsletter__submit">
+            <span>Become a VIP Member</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+          <p class="newsletter__privacy">
+            We respect your privacy. Unsubscribe anytime.
+          </p>
+        </form>
+        <div id="newsletterSuccess" class="newsletter__success" style="display: none;">
+          <i class="fas fa-check-circle"></i>
+          <p>Thank you for subscribing! We'll be in touch soon.</p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>Built by <a href="https://jodd.dev" target="_blank">Jodd</a></p>
+      </footer>
+    </div>
+
+    <!-- Chef Service Modal -->
+    <dialog id="chefServiceModal" class="service-modal">
+      <div class="service-modal__content">
+        <button class="service-modal__close" id="closeChefModal" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="service-modal__hero">
+          <img src="https://static.wixstatic.com/media/73b2c3_636ca558101b47fba86f662736baf612~mv2.jpg/v1/fill/w_400,h_600,al_c,q_80,usm_0.66_1.00_0.01/73b2c3_636ca558101b47fba86f662736baf612~mv2.jpg" alt="Chef Service" class="service-modal__hero-img" />
+        </div>
+
+        <div class="service-modal__body">
+          <h2 class="service-modal__title">Chef Service</h2>
+          <p class="service-modal__subtitle">Indulge in Culinary Excellence with Our Private Home Chefs at Palacio Blanco</p>
+          
+          <div class="service-modal__description">
+            <p>At Palacio Blanco, we believe that every meal should be a masterpiece, a symphony of flavors and artistry that lingers in your memory. That's why we are proud to introduce you to our esteemed team of Private Home Chefs – the architects behind the gastronomic wonders that await you.</p>
+            
+            <h3>Expertise Beyond Compare</h3>
+            <p>Our Private Home Chefs are culinary virtuosos, skilled in a diverse range of cuisines and techniques. From international delicacies to local specialties, they curate menus that cater to your preferences, transforming every meal into a captivating journey for your palate.</p>
+          </div>
+
+          <div class="service-modal__gallery">
+            <div class="service-modal__gallery-item">
+              <img src="https://static.wixstatic.com/media/73b2c3_4dc8a5e78d834e779069f31bc3766d00~mv2.jpg/v1/fill/w_300,h_240,al_c,q_80/IMG_3716-1024x775.jpg" alt="Oeuf à la Maître" />
+              <h4>Oeuf à la Maître</h4>
+              <p>A Symphony of Eggs by Chef Rocio. Euphoric Honeyed Egg Delight with Floral Flourish</p>
+            </div>
+            <div class="service-modal__gallery-item">
+              <img src="https://static.wixstatic.com/media/73b2c3_e7da919dd06e4567840e51b8b62c8477~mv2.jpg/v1/fill/w_300,h_240,al_c,q_80/hire-a-private-chef.jpg" alt="Quad Shrimp" />
+              <h4>Quad Shrimp</h4>
+              <p>Rocío's Quad Shrimp Elegance with Crowned Salad</p>
+            </div>
+            <div class="service-modal__gallery-item">
+              <img src="https://static.wixstatic.com/media/73b2c3_37b7c456290e44bda2db1dd5edec1283~mv2.jpg/v1/fill/w_300,h_240,al_c,q_80/caprese-salad-ii_orig.jpg" alt="Rocío's Classic Breakfast Delight" />
+              <h4>Rocío's Classic Breakfast Delight</h4>
+              <p>Rocío's Savory Brunch Canvas: Potato Palette with Egg, Bacon, and Culinary Swirls</p>
+            </div>
+            <div class="service-modal__gallery-item">
+              <img src="https://static.wixstatic.com/media/73b2c3_e2888c3307474a258ff0ff0469077a41~mv2.jpg/v1/fill/w_300,h_240,al_c,q_80/images.jpg" alt="Rocío's Gastronomic Green Symphony" />
+              <h4>Rocío's Gastronomic Green Symphony</h4>
+              <p>Rocío's Coastal Avocado Sunrise: Shrimp and Egg Medley with Garden Greens</p>
+            </div>
+          </div>
+
+          <div class="service-modal__guarantee">
+            <h3>Satisfaction Guarantee</h3>
+            <p>🌿 Fresh, Local, and Handpicked: With a deep commitment to quality, our chefs meticulously select the finest ingredients. Whether it's seafood straight from the ocean or organic produce from local markets, every dish is a tribute to the bounties of nature.</p>
+          </div>
+
+          <button id="chefServiceCTA" class="service-modal__cta">
+            <i class="fab fa-whatsapp"></i>
+            Book Chef Service via WhatsApp
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Massages Modal -->
+    <dialog id="massagesModal" class="service-modal">
+      <div class="service-modal__content">
+        <button class="service-modal__close" id="closeMassagesModal" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="service-modal__hero">
+          <img src="https://static.wixstatic.com/media/11062b_74c3bd45471e49a7a0c85a0953bc8149~mv2_d_5478_3652_s_4_2.jpg/v1/fill/w_800,h_600,al_c,q_85,usm_0.66_1.00_0.01/11062b_74c3bd45471e49a7a0c85a0953bc8149~mv2_d_5478_3652_s_4_2.jpg" alt="Massages" class="service-modal__hero-img" />
+        </div>
+
+        <div class="service-modal__body">
+          <h2 class="service-modal__title">Massages</h2>
+          <p class="service-modal__subtitle">Rejuvenate Your Body and Spirit at Palacio Blanco</p>
+          
+          <div class="service-modal__description">
+            <p>Experience ultimate relaxation with our curated selection of therapeutic massage treatments. From the comfort of your private villa to the serene beach setting, our professional therapists bring wellness directly to you.</p>
+          </div>
+
+          <div class="service-modal__gallery">
+            <div class="service-modal__gallery-item">
+              <img src="https://static.wixstatic.com/media/73b2c3_f27226c0e44f4d27bc2ab14473bf7a4c~mv2.png/v1/fill/w_300,h_240,al_c,q_85/a4848d_ce00e6b57f264054b4dbce5c2d690615~mv2.png" alt="Private Villa Massage" />
+              <h4>Private Villa Massage</h4>
+              <p>Indulge in a personalized massage experience in the comfort and privacy of your own villa.</p>
+            </div>
+            <div class="service-modal__gallery-item">
+              <img src="https://static.wixstatic.com/media/73b2c3_811431bb19294d3bb4d004ea462a5af1~mv2.png/v1/fill/w_300,h_240,al_c,q_85/a4848d_98e8eeab4a7a4447baf3f42df5beed6f~mv2.png" alt="Beach Massage" />
+              <h4>Beach Massage</h4>
+              <p>Let the soothing sounds of the ocean enhance your relaxation with our beachside massage service.</p>
+            </div>
+            <div class="service-modal__gallery-item">
+              <img src="https://static.wixstatic.com/media/73b2c3_ef5e790bb2a54e089180b024d06ceb14~mv2.png/v1/fill/w_300,h_240,al_c,q_85/a4848d_36da75608dea4ba68d13fcc0c78da501~mv2.png" alt="Shiatsu Massage" />
+              <h4>Shiatsu Massage</h4>
+              <p>Ancient Japanese technique focusing on pressure points to restore balance and energy flow.</p>
+            </div>
+            <div class="service-modal__gallery-item">
+              <img src="https://static.wixstatic.com/media/73b2c3_2159ddd9114d442b9a85133c391d7bad~mv2.png/v1/fill/w_300,h_240,al_c,q_85/a4848d_0e8db27bb1a341f2b03f32bfa611d9b4~mv2.png" alt="Deep Tissue Massage" />
+              <h4>Deep Tissue Massage</h4>
+              <p>Therapeutic treatment targeting deep muscle layers to release chronic tension and pain.</p>
+            </div>
+          </div>
+
+          <button id="massagesCTA" class="service-modal__cta">
+            <i class="fab fa-whatsapp"></i>
+            Book Massage Service via WhatsApp
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Scuba Diving Modal -->
+    <dialog id="scubaModal" class="service-modal">
+      <div class="service-modal__content">
+        <button class="service-modal__close" id="closeScubaModal" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="service-modal__hero">
+          <img src="https://static.wixstatic.com/media/562c098f0e0640058a911f49310e0392.jpg/v1/fill/w_800,h_600,al_c,q_85/Diving%20in%20the%20Reef.jpg" alt="Scuba Diving" class="service-modal__hero-img" />
+        </div>
+
+        <div class="service-modal__body">
+          <h2 class="service-modal__title">Scuba Diving</h2>
+          <p class="service-modal__subtitle">Explore the Underwater Wonders of the Sea of Cortez</p>
+          
+          <div class="service-modal__description">
+            <h3>Scuba Excursion to Isla Cerralvo</h3>
+            <p>Embark on a certification journey alongside our experienced team. Our instructors are active members of the IANTD instructors association. Whether you're a seasoned diver aiming to enhance your abilities or a newcomer fascinated by this captivating sport, our courses can be customized to suit your requirements.</p>
+            
+            <p><strong style="color: var(--color-ocean);">Enrollments of two or more participants together come with reduced course fees.</strong></p>
+          </div>
+
+          <div class="service-modal__packages">
+            <div class="service-modal__package">
+              <h4>Scuba Excursion to Isla Cerralvo</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Available: All year long</li>
+                <li><i class="fas fa-check"></i> Best season: April - October</li>
+                <li><i class="fas fa-check"></i> Duration: 07:00 am - 03:00 pm</li>
+                <li><i class="fas fa-check"></i> Group Size: Minimum 2</li>
+                <li><i class="fas fa-check"></i> Includes: Panga transport, 2 tanks, lunch, Dive Master, gear</li>
+              </ul>
+            </div>
+
+            <div class="service-modal__package">
+              <h4>Shore Diving - Las Arenas</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Available: All year long</li>
+                <li><i class="fas fa-check"></i> Duration: 2 to 3 hours</li>
+                <li><i class="fas fa-check"></i> Group Size: Minimum 1</li>
+                <li><i class="fas fa-check"></i> Includes: All scuba gear + 1 tank</li>
+              </ul>
+            </div>
+
+            <div class="service-modal__package">
+              <h4>Open Water Diver Certification</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Get PADI certified in the Sea of Cortez</li>
+                <li><i class="fas fa-check"></i> Duration: 4 days</li>
+                <li><i class="fas fa-check"></i> Includes: Immersions, theory, manual, all equipment</li>
+              </ul>
+            </div>
+
+            <div class="service-modal__package">
+              <h4>Discover Scuba</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Perfect for first-timers</li>
+                <li><i class="fas fa-check"></i> Duration: 6hrs by panga / 3hrs from shore</li>
+                <li><i class="fas fa-check"></i> Includes: 2 tanks, gear & lunch (panga) / 1 tank + gear (shore)</li>
+              </ul>
+            </div>
+          </div>
+
+          <button id="scubaCTA" class="service-modal__cta">
+            <i class="fab fa-whatsapp"></i>
+            Book Scuba Diving via WhatsApp
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Kiteboarding Modal -->
+    <dialog id="kiteboardingModal" class="service-modal">
+      <div class="service-modal__content">
+        <button class="service-modal__close" id="closeKiteboardingModal" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="service-modal__hero">
+          <img src="https://static.wixstatic.com/media/11062b_9fc054c1ff204bb0a746101604f564d0~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85/11062b_9fc054c1ff204bb0a746101604f564d0~mv2.jpg" alt="Kiteboarding" class="service-modal__hero-img" />
+        </div>
+
+        <div class="service-modal__body">
+          <h2 class="service-modal__title">Kiteboarding</h2>
+          <p class="service-modal__subtitle">Learn to Ride the Wind in Baja California Sur</p>
+          
+          <div class="service-modal__description">
+            <p>Embark on kiteboarding lessons and kite vacations with PalacioBlanco during what promises to be another fantastic wind season. This is an ideal opportunity to learn and practice kiteboarding at our specialized beach.</p>
+            
+            <p>Our team is fully prepared to instruct individuals with minimal or no prior experience, starting right from the basics. Moreover, we offer personalized guidance and assistance to address specific areas or skills you wish to refine.</p>
+          </div>
+
+          <div class="service-modal__packages">
+            <div class="service-modal__package">
+              <h4>Kiteboarding Lessons</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Available: Winter Season (November - March)</li>
+                <li><i class="fas fa-check"></i> Best season: Nov - March</li>
+                <li><i class="fas fa-check"></i> Duration: Per hour</li>
+                <li><i class="fas fa-check"></i> Includes: All kite gear, wet suit, and beach support</li>
+              </ul>
+            </div>
+
+            <div class="service-modal__package">
+              <h4>Hookup Package</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Available: Winter Season (November - April)</li>
+                <li><i class="fas fa-check"></i> Duration: 5 nights and 6 days</li>
+                <li><i class="fas fa-check"></i> Group Size: Minimum 1 and maximum 9</li>
+                <li><i class="fas fa-check"></i> Includes: 9 hours of kite lessons with beach support, breakfast and lunch, 5 nights in available accommodation</li>
+              </ul>
+            </div>
+          </div>
+
+          <button id="kiteboardingCTA" class="service-modal__cta">
+            <i class="fab fa-whatsapp"></i>
+            Book Kiteboarding via WhatsApp
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Fishing Modal -->
+    <dialog id="fishingModal" class="service-modal">
+      <div class="service-modal__content">
+        <button class="service-modal__close" id="closeFishingModal" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="service-modal__hero">
+          <img src="https://static.wixstatic.com/media/11062b_a0cb1bca0809477ead838aa7e02d8988~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85/11062b_a0cb1bca0809477ead838aa7e02d8988~mv2.jpg" alt="Fishing" class="service-modal__hero-img" />
+        </div>
+
+        <div class="service-modal__body">
+          <h2 class="service-modal__title">Fishing Excursions</h2>
+          <p class="service-modal__subtitle">World-Class Sportfishing in the Sea of Cortez</p>
+          
+          <div class="service-modal__description">
+            <p>Whether you're drawn to Flyfishing or Conventional Fishing, PalacioBlanco stands as the ultimate destination to engage with the aquatic wonders of The Sea of Cortez. We offer complete days out on the water, and each expedition comes inclusive of live bait.</p>
+            
+            <h3>Target Species</h3>
+            <p>Our waters provide the opportunity to reel in various species, including <strong>Dorado</strong> (June-Nov), <strong>Yellowfin tuna</strong> (August-Dec), <strong>Yellowtail</strong> (Jan-May), <strong>Cabrilla</strong> (year-round), <strong>Sierra</strong> (Nov-May), <strong>Pargo</strong> (year-round), <strong>Wahoo</strong> (June-November), as well as Striped Marlin, Blue marlin, Black marlin, and Sailfish, among others.</p>
+            
+            <p>Once you've finished your breakfast, a short descent down the stairs places you on your awaiting boat – it's truly that simple.</p>
+          </div>
+
+          <div class="service-modal__packages">
+            <div class="service-modal__package">
+              <h4>Fishing Day Trip</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Available: All year long</li>
+                <li><i class="fas fa-check"></i> Best season: May - October</li>
+                <li><i class="fas fa-check"></i> Duration: 8 hours</li>
+                <li><i class="fas fa-check"></i> Group: Rod & Reel max 3 per boat / Fly Fishing max 2 per boat</li>
+                <li><i class="fas fa-check"></i> Includes: Lunch, live bait, filleting service, rod and reels, hooks, weights, limited lures</li>
+              </ul>
+              <p class="service-modal__note">📌 For fly fishing enthusiasts, please bring your own fly gear (10s and 12s recommended)</p>
+            </div>
+
+            <div class="service-modal__package">
+              <h4>Hookup Package</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Available: All year long</li>
+                <li><i class="fas fa-check"></i> Duration: 4 nights and 5 days</li>
+                <li><i class="fas fa-check"></i> Group Size: Minimum 2</li>
+                <li><i class="fas fa-check"></i> Includes: 4 nights, 3 full days fishing in pangas, filet and freezer service, all meals</li>
+                <li><i class="fas fa-check"></i> Starting from: $900 USD per person</li>
+              </ul>
+            </div>
+
+            <div class="service-modal__package">
+              <h4>Fly Fishing Getaway</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Duration: 5 nights, 4 full days fly fishing</li>
+                <li><i class="fas fa-check"></i> Group: 2 anglers per boat</li>
+                <li><i class="fas fa-check"></i> Includes: Accommodation, 3 daily meals, all fishing days</li>
+                <li><i class="fas fa-check"></i> Remember: Bring your personal fly fishing gear (10s and 12s recommended)</li>
+              </ul>
+            </div>
+          </div>
+
+          <button id="fishingCTA" class="service-modal__cta">
+            <i class="fab fa-whatsapp"></i>
+            Book Fishing Excursion via WhatsApp
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Freediving Modal -->
+    <dialog id="freedivingModal" class="service-modal">
+      <div class="service-modal__content">
+        <button class="service-modal__close" id="closeFreedivingModal" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="service-modal__hero">
+          <img src="https://static.wixstatic.com/media/11062b_e1f81a43bbaa4b41bee87cf45d41ce09~mv2.jpeg/v1/fill/w_800,h_600,al_c,q_85/11062b_e1f81a43bbaa4b41bee87cf45d41ce09~mv2.jpeg" alt="Freediving" class="service-modal__hero-img" />
+        </div>
+
+        <div class="service-modal__body">
+          <h2 class="service-modal__title">Freediving</h2>
+          <p class="service-modal__subtitle">Achieve Certification with IANTD-Certified Instructors</p>
+          
+          <div class="service-modal__description">
+            <p>Embark on a journey of certification with our team. Our instructors are proud members of the IANTD instructors association.</p>
+            
+            <p>Whether you're an existing freediver seeking to elevate your skills or simply intrigued by entering this incredible sport, our offerings encompass a range of activities and courses tailored to your needs.</p>
+            
+            <p><strong style="color: var(--color-ocean);">Course fees are reduced when two or more individuals enroll together.</strong></p>
+          </div>
+
+          <div class="service-modal__packages">
+            <div class="service-modal__package">
+              <h4>Available IANTD Certifications</h4>
+              <ul>
+                <li><i class="fas fa-water"></i> <strong>Open Water Freediver</strong> (Level 0, 33ft/10m)</li>
+                <li><i class="fas fa-water"></i> <strong>Advanced Freediver</strong> (Level 1, 66ft/20m)</li>
+                <li><i class="fas fa-water"></i> <strong>Master Freediver</strong> (Level 2, 99ft/30m)</li>
+                <li><i class="fas fa-water"></i> <strong>Zero to Hero</strong> (Start from Level 0 to Level 2)</li>
+              </ul>
+            </div>
+
+            <div class="service-modal__package">
+              <h4>Scuba Excursion to Isla Cerralvo</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Available: All year long</li>
+                <li><i class="fas fa-check"></i> Best season: April - October</li>
+                <li><i class="fas fa-check"></i> Duration: 07:00 am - 03:00 pm</li>
+                <li><i class="fas fa-check"></i> Group Size: Minimum 2</li>
+                <li><i class="fas fa-check"></i> Includes: Panga transport, 2 tanks, lunch, Dive Master, gear</li>
+              </ul>
+            </div>
+          </div>
+
+          <button id="freedivingCTA" class="service-modal__cta">
+            <i class="fab fa-whatsapp"></i>
+            Book Freediving Course via WhatsApp
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Whales Modal -->
+    <dialog id="whalesModal" class="service-modal">
+      <div class="service-modal__content">
+        <button class="service-modal__close" id="closeWhalesModal" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="service-modal__hero">
+          <img src="https://static.wixstatic.com/media/9dd990a05a7b44d9819c297872522aeb.jpg/v1/fill/w_800,h_600,al_c,q_85/9dd990a05a7b44d9819c297872522aeb.jpg" alt="Gray Whales & Whale Sharks" class="service-modal__hero-img" />
+        </div>
+
+        <div class="service-modal__body">
+          <h2 class="service-modal__title">Gray Whales & Whale Sharks</h2>
+          <p class="service-modal__subtitle">Encounter the Ocean's Gentle Giants</p>
+          
+          <div class="service-modal__description">
+            <p>Ready for a Snorkeling Adventure with the World's Largest Fish? PalacioBlanco invites you to join us as we collaborate with the experts at Whale Shark Mexico for an unforgettable experience of swimming alongside these magnificent creatures.</p>
+            
+            <p>Moreover, our journeys frequently offer sightings of dolphins, humpback whales, and mobula rays, enhancing the excitement of your expedition.</p>
+          </div>
+
+          <div class="service-modal__packages">
+            <div class="service-modal__package">
+              <h4>Gray Whales Trip</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Season: January - March</li>
+                <li><i class="fas fa-check"></i> Duration: Full day excursion</li>
+                <li><i class="fas fa-check"></i> Includes: Breakfast, lunch, transportation and wetsuit rental</li>
+                <li><i class="fas fa-check"></i> Experience intimate encounters with gray whale mothers and calves</li>
+              </ul>
+            </div>
+
+            <div class="service-modal__package">
+              <h4>Whale Shark Snorkeling</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Season: October - April</li>
+                <li><i class="fas fa-check"></i> Duration: 3 hours approx.</li>
+                <li><i class="fas fa-check"></i> Group Size: Minimum 3</li>
+                <li><i class="fas fa-check"></i> Includes: Gear and expert guides</li>
+                <li><i class="fas fa-check"></i> Bonus: Often spot dolphins, humpback whales, and mobula rays!</li>
+              </ul>
+              <p class="service-modal__note">🌊 Transportation to La Paz available as add-on</p>
+            </div>
+          </div>
+
+          <button id="whalesCTA" class="service-modal__cta">
+            <i class="fab fa-whatsapp"></i>
+            Book Whale Watching via WhatsApp
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- ATV Rental Modal -->
+    <dialog id="atvModal" class="service-modal">
+      <div class="service-modal__content">
+        <button class="service-modal__close" id="closeAtvModal" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="service-modal__hero">
+          <img src="https://d1dugnwx5ew6jg.cloudfront.net/rs:fill:800:600/czM6Ly9jOGtlLXByb2QvNGVjZmI5OGItMmE2Ni00MzdkLTljN2UtNjBhYmMyNTI2YjI5XzE3MTE0NzYyNDM1MDkuanBn.jpg" alt="ATV Rental" class="service-modal__hero-img" />
+        </div>
+
+        <div class="service-modal__body">
+          <h2 class="service-modal__title">ATV Rentals & Adventures</h2>
+          <p class="service-modal__subtitle">Explore Baja's Rugged Beauty on Premium Off-Road Vehicles</p>
+          
+          <div class="service-modal__description">
+            <p>Discover the untamed landscapes of Baja California Sur with our premium ATV and UTV rentals. From pristine beaches to mountain trails, waterfalls to desert canyons, experience the adventure of a lifetime.</p>
+            
+            <p>Our fleet features top-of-the-line Honda vehicles, meticulously maintained and ready for your next adventure. Whether you're seeking a solo exploration or a group expedition, we have the perfect ride for you.</p>
+          </div>
+
+          <div class="service-modal__packages">
+            <div class="service-modal__package">
+              <h4>ATV Premium Rentals</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Latest model Honda ATVs</li>
+                <li><i class="fas fa-check"></i> Full safety equipment included</li>
+                <li><i class="fas fa-check"></i> Hourly, daily, and weekly rates available</li>
+                <li><i class="fas fa-check"></i> Free delivery to your villa</li>
+                <li><i class="fas fa-check"></i> Comprehensive insurance options</li>
+              </ul>
+            </div>
+
+            <div class="service-modal__package">
+              <h4>Guided Adventure Tours</h4>
+              <ul>
+                <li><i class="fas fa-mountain"></i> <strong>Waterfall Expeditions</strong> - Hidden cascades & mountain streams</li>
+                <li><i class="fas fa-water"></i> <strong>Beach & Coastal Routes</strong> - Pristine shores & scenic overlooks</li>
+                <li><i class="fas fa-tree"></i> <strong>Desert Canyon Trails</strong> - Dramatic landscapes & wildlife</li>
+                <li><i class="fas fa-compass"></i> <strong>Custom Adventures</strong> - Design your own route</li>
+              </ul>
+            </div>
+
+            <div class="service-modal__package">
+              <h4>What's Included</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Professional guide and support vehicle</li>
+                <li><i class="fas fa-check"></i> Safety briefing and equipment</li>
+                <li><i class="fas fa-check"></i> Bottled water and snacks</li>
+                <li><i class="fas fa-check"></i> GoPro camera rental available</li>
+                <li><i class="fas fa-check"></i> Photo package of your adventure</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-modal__guarantee">
+            <h3>Adventure Awaits</h3>
+            <p>🏜️ Experience the thrill of off-roading through Baja's most spectacular terrain. All tours depart from Palacio Blanco, making it convenient to start your adventure right from your doorstep.</p>
+          </div>
+
+          <button id="atvCTA" class="service-modal__cta">
+            <i class="fab fa-whatsapp"></i>
+            Book ATV Adventure via WhatsApp
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- Facial Treatment Modal -->
+    <dialog id="facialModal" class="service-modal">
+      <div class="service-modal__content">
+        <button class="service-modal__close" id="closeFacialModal" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="service-modal__hero">
+          <img src="https://d1dugnwx5ew6jg.cloudfront.net/rs:fill:800:600/czM6Ly9jOGtlLXByb2QvNGVjZmI5OGItMmE2Ni00MzdkLTljN2UtNjBhYmMyNTI2YjI5XzE3MTE0NzYzNDk0NjMud2VicA.webp" alt="Facial Treatment" class="service-modal__hero-img" />
+        </div>
+
+        <div class="service-modal__body">
+          <h2 class="service-modal__title">Facial Treatments</h2>
+          <p class="service-modal__subtitle">Revitalize Your Skin with Professional Spa Facials</p>
+          
+          <div class="service-modal__description">
+            <p>Experience the ultimate in skincare luxury with our curated facial treatments. Each facial is designed to address your unique skin needs, using premium products and expert techniques to reveal your natural radiance.</p>
+            
+            <p>Our professional aestheticians bring the spa experience directly to your villa, ensuring complete privacy and relaxation while delivering transformative results.</p>
+          </div>
+
+          <div class="service-modal__gallery">
+            <div class="service-modal__gallery-item">
+              <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=300&h=240&fit=crop" alt="Deep Cleansing Facial" />
+              <h4>Deep Cleansing Facial</h4>
+              <p>Purify and refresh with a thorough cleanse, exfoliation, and extraction to unclog pores and remove impurities.</p>
+            </div>
+            <div class="service-modal__gallery-item">
+              <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=300&h=240&fit=crop" alt="Hydrating Facial" />
+              <h4>Hydrating Facial</h4>
+              <p>Restore moisture and plumpness with nourishing serums and masks designed for dry or dehydrated skin.</p>
+            </div>
+            <div class="service-modal__gallery-item">
+              <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=300&h=240&fit=crop" alt="Anti-Aging Facial" />
+              <h4>Anti-Aging Facial</h4>
+              <p>Reduce fine lines and boost collagen production with advanced techniques and age-defying ingredients.</p>
+            </div>
+            <div class="service-modal__gallery-item">
+              <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=300&h=240&fit=crop" alt="Brightening Facial" />
+              <h4>Brightening Facial</h4>
+              <p>Even skin tone and reduce dark spots with vitamin C and other illuminating treatments.</p>
+            </div>
+          </div>
+
+          <div class="service-modal__packages">
+            <div class="service-modal__package">
+              <h4>Treatment Details</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Duration: 60-90 minutes</li>
+                <li><i class="fas fa-check"></i> Location: In-villa service available</li>
+                <li><i class="fas fa-check"></i> Customized to your skin type and concerns</li>
+                <li><i class="fas fa-check"></i> Professional-grade products and techniques</li>
+                <li><i class="fas fa-check"></i> Includes: Cleansing, exfoliation, massage, mask, and moisturizer</li>
+              </ul>
+            </div>
+
+            <div class="service-modal__package">
+              <h4>Add-On Services</h4>
+              <ul>
+                <li><i class="fas fa-star"></i> LED Light Therapy</li>
+                <li><i class="fas fa-star"></i> Microdermabrasion</li>
+                <li><i class="fas fa-star"></i> Chemical Peels</li>
+                <li><i class="fas fa-star"></i> Facial Massage Extension</li>
+                <li><i class="fas fa-star"></i> Eye Treatment</li>
+              </ul>
+            </div>
+          </div>
+
+          <button id="facialCTA" class="service-modal__cta">
+            <i class="fab fa-whatsapp"></i>
+            Book Facial Treatment via WhatsApp
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <!-- WiFi Modal -->
+    <dialog id="wifiModal" class="modal">
+      <div class="modal__content">
+        <button class="modal__close" id="closeWifiModal" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+        <h3 class="modal__title">
+          <i class="fas fa-wifi"></i>
+          Join Our Network
+        </h3>
+        <p class="modal__subtitle">Complimentary Wi-Fi for all guests</p>
+        
+        <div class="credential">
+          <span class="credential__label">Network (SSID)</span>
+          <strong id="wifiSsid" class="credential__value">palacioblanco</strong>
+          <button data-copy-target="wifiSsid" class="credential__copy">
+            <i class="far fa-copy"></i> Copy
+          </button>
+        </div>
+
+        <div class="credential">
+          <span class="credential__label">Password</span>
+          <strong id="wifiPassword" class="credential__value">palaciowhite</strong>
+          <button data-copy-target="wifiPassword" class="credential__copy">
+            <i class="far fa-copy"></i> Copy
+          </button>
+        </div>
+
+        <div class="qr-section">
+          <p class="qr-section__text">
+            Scan this QR code to connect automatically:
+          </p>
+          <img
+            id="wifiQrImage"
+            class="qr-section__image"
+            src=""
+            alt="Wi-Fi QR code"
+          />
+          <code id="wifiQrString" class="qr-section__code">WIFI:T:WPA;S:palacioblanco;P:palaciowhite;;</code>
+        </div>
+
+        <button id="wifiJoinButton" class="modal__button">
+          <i class="far fa-copy"></i>
+          Copy All Wi-Fi Details
+        </button>
+      </div>
+    </dialog>
+
+    <script src="config.js"></script>
+    <script type="module">
+      // Import Supabase client functions
+      import { subscribeToNewsletter } from './supabase.js';
+      
+      // Make it available globally for app.js
+      window.subscribeToNewsletter = subscribeToNewsletter;
+    </script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
