@@ -1,0 +1,15 @@
+{
+  "name": "qrcode-palacio",
+  "version": "0.1.0",
+  "description": "Static landing page with QR code for WhatsApp and Wi-Fi access",
+  "type": "module",
+  "scripts": {
+    "generate:qr": "node scripts/generate-qr.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "qrcode": "^1.5.3"
+  }
+}
+
+
